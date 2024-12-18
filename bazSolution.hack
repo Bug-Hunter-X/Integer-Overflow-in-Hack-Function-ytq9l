@@ -1,0 +1,1 @@
+function foo(x: int): int {  return x + 1; } function bar(x: int): int {  return foo(x) * 2; } function baz(x: int): int {  if (x > 2147483646) {    return -1; // Or handle the overflow appropriately }  return bar(x) - 1; }  function main(): void {  var x: int = 5;  var y: int = baz(x);  echo y;  x = 2147483647;  y = baz(x);  echo y; }
